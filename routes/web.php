@@ -1,94 +1,52 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+///////////// Frontend Routes//////////////////
 
-Route::get('/', function () {
-    return view('home');
-});
+    // Auth
+    Auth::routes(['verify' => true]);
 
-Route::get('/home', function () {
-    return view('home');
-});
+    // navigation
+    Route::get('/','SiteController@index');
 
-Route::get('/jobs', function () {
-    return view('jobs');
-});
+    Route::get('/home', 'HomeController@index');
 
-Route::get('/jobs/job-details', function () {
-    return view('job_details');
-});
 
-Route::group(['prefix' => '/admin'], function () {
-    Route::get('/dashboard', function () {
-        return view('users.admin.dashboard');
-    });
-    Route::get('/edit_profile', function () {
-        return view('users.admin.edit_profile');
-    });
-    Route::get('/add_categories', function () {
-        return view('users.admin.add_categories');
-    });
-    Route::get('/add_education', function () {
-        return view('users.admin.add_education');
-    });
-    Route::get('/post_job', function () {
-        return view('users.admin.post_job');
-    });
-    Route::get('/manage_jobSeeker', function () {
-        return view('users.admin.manage_jobSeeker');
-    });
-    Route::get('/manage_employer', function () {
-        return view('users.admin.manage_employer');
-    });
-    Route::get('/manage_admin', function () {
-        return view('users.admin.manage_admin');
-    });
+    Route::resource('category', 'CategoryController');
+    Route::resource('job', 'JobController');
+//
 
-});
+///////////// Admin Backend Routes//////////////////
+    Route::group(['prefix' => '/admin','namespace' => 'admin'], function () {
 
-Route::group(['prefix' => '/jobseeker'], function () {
-    Route::get('/create-resume', function () {
-        return view('users.jobseeker.create_resume');
-    });
+        // navigation
+        Route::get('/','AdminController@dashboard');
+        Route::get('profile','AdminController@profile');
+        
+        // Restfull Controller| Category | degere | job
+        Route::resource('category', 'CategoryController');
+        Route::resource('degree', 'DegreeController');
+        Route::resource('job', 'JobController');
 
-    Route::get('/view-resume', function () {
-        return view('users.jobseeker.view_resume');
-    });
+        // Manage users
+        Route::get('manage_seeker','UserController@manage_seeker');
+        Route::get('manage_employer','UserController@manage_employer');
+        Route::get('manage_admin','UserController@manage_admin');
 
-    Route::get('/edit-resume', function () {
-        return view('users.jobseeker.edit_resume');
-    });
+        // Update users
+        Route::put('manage_user/{user}','UserController@update');
+        Route::delete('manage_user/{user}','UserController@destroy');
 
-    Route::get('/applied-jobs', function () {
-        return view('users.jobseeker.applied_jobs');
-    });
-});
 
-Route::group(['prefix' => '/employer'], function () {
-    Route::get('/create-company', function () {
-        return view('users.employer.create_company');
     });
-    
-    Route::get('/edit-company', function () {
-        return view('users.employer.edit_company');
-    });
+//
 
-    Route::get('/post-job', function () {
-        return view('users.employer.post_job');
-    });
+///////////// Employer Routes//////////////////
+    Route::group(['prefix' => '/employer','namespace' => 'employer'], function () {
+        
+        Route::get('/','SiteController@employer');
 
-    Route::get('/applied-candidates', function () {
-        return view('users.employer.applied_candidates');
     });
-});
+//

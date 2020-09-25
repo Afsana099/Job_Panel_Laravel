@@ -1,91 +1,74 @@
-@extends('admin.layouts.dashboard')
-@section('dashboard')
- <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <br><br><br><br><br><br>
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-          </div>
-
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                        </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-comments fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+@extends('layouts.admin')
+@section('content')
+<!-- Start Header Banner Area -->
+<div class="jobs_banner_area">
+	<div class="container">
+		<div class="jobs_banner_content width flex">
+		</div>
+	</div>
+</div>
+<!-- End Header Banner Area -->
+<!-- Start Job Details Area -->
+<div class="job_details_area">
+	<div class="container-fluid">
+		<div class="row no-gutters">
+			<div class="col-md-3">
+				<div class="view_left">
+					@include('admin.partials.sidebar')
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="view_right">
+					<div class="profile_des">
+						<div class="single_profile_box">
+							<!-- Start Browse Categories -->
+							<div class="categories_area">
+								<div class="container">
+									<div class="section_title">
+										<h4>Dashboard</h4>
+									</div>
+									<div class="all_categories">
+										<div class="single_categories">
+											<div class="cat_icon icon_img">
+												<!-- <i class="fas fa-home"></i> -->
+												<img src="{{ asset('/public') }}/admin/assets/images/bank.png" alt="">
+											</div>
+											<p>Total Job</p>
+											<span>({{ $count['job'] }})</span>
+										</div>
+										<div class="single_categories">
+											<div class="cat_icon icon_img">
+												<!-- <i class="fas fa-home"></i> -->
+												<img src="{{ asset('/public') }}/admin/assets/images/bank.png" alt="">
+											</div>
+											<p>Total Employer</p>
+											<span>({{ $count['employer'] }})</span>
+										</div>
+										<div class="single_categories">
+											<div class="cat_icon icon_img">
+												<!-- <i class="fas fa-home"></i> -->
+												<img src="{{ asset('/public') }}/admin/assets/images/bank.png" alt="">
+											</div>
+											<p>Total Job Seeker</p>
+											<span>({{ $count['seeker'] }})</span>
+										</div>
+										<div class="single_categories">
+											<div class="cat_icon icon_img">
+												<!-- <i class="fas fa-home"></i> -->
+												<img src="{{ asset('/public') }}/admin/assets/images/bank.png" alt="">
+											</div>
+											<p>Total Admin</p>
+											<span>({{ $count['admin'] }})</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Browse Categories -->
 @endsection
