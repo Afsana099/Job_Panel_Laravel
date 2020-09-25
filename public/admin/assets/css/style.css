@@ -748,3 +748,31 @@ label {
     margin-left: -5px;
     align-items: baseline;
 }
+/* New */
+
+.admin_header_area .dropdown button#dropdownMenuButton img {
+    width: 30px;
+}
+
+.dropdown {
+    background-color: #DDDFEB;
+    padding: 5px 38px;
+    text-align: right;
+}
+
+.dropdown button#dropdownMenuButton {
+    background-color: transparent;
+    border: navajowhite;
+    padding: 0;
+    box-shadow: navajowhite;
+}
+
+.dropdown.show button#dropdownMenuButton {
+    border: navajowhite;
+}
+.cat_icon.icon_img img {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    margin-bottom: 13px;
+}

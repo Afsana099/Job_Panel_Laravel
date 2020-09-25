@@ -12,33 +12,83 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
-    return view('admin.home.home');
+    return view('home');
 });
+
 Route::get('/home', function () {
-    return view('admin.home.home');
+    return view('home');
 });
+
 Route::get('/jobs', function () {
-    return view('admin.jobs');
+    return view('jobs');
 });
-Route::get('/create_resume', function () {
-    return view('admin.create_resume');
+
+Route::get('/jobs/job-details', function () {
+    return view('job_details');
 });
-Route::get('/job_details', function () {
-    return view('admin.job_details'); 
+
+Route::group(['prefix' => '/admin'], function () {
+    Route::get('/dashboard', function () {
+        return view('users.admin.dashboard');
+    });
+    Route::get('/edit_profile', function () {
+        return view('users.admin.edit_profile');
+    });
+    Route::get('/add_categories', function () {
+        return view('users.admin.add_categories');
+    });
+    Route::get('/add_education', function () {
+        return view('users.admin.add_education');
+    });
+    Route::get('/post_job', function () {
+        return view('users.admin.post_job');
+    });
+    Route::get('/manage_jobSeeker', function () {
+        return view('users.admin.manage_jobSeeker');
+    });
+    Route::get('/manage_employer', function () {
+        return view('users.admin.manage_employer');
+    });
+    Route::get('/manage_admin', function () {
+        return view('users.admin.manage_admin');
+    });
+
 });
-Route::get('/applied_jobs', function () {
-    return view('admin.applied_jobs');
+
+Route::group(['prefix' => '/jobseeker'], function () {
+    Route::get('/create-resume', function () {
+        return view('users.jobseeker.create_resume');
+    });
+
+    Route::get('/view-resume', function () {
+        return view('users.jobseeker.view_resume');
+    });
+
+    Route::get('/edit-resume', function () {
+        return view('users.jobseeker.edit_resume');
+    });
+
+    Route::get('/applied-jobs', function () {
+        return view('users.jobseeker.applied_jobs');
+    });
 });
-Route::get('/edit_resume', function () {
-    return view('admin.edit_resume');
-});
-Route::get('/view_resume', function () {
-    return view('admin.view_resume');
-});
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-});
-Route::get('/jobseeker/dashboard', function () {
-    return view('jobseeker.edit_profile');
+
+Route::group(['prefix' => '/employer'], function () {
+    Route::get('/create-company', function () {
+        return view('users.employer.create_company');
+    });
+    
+    Route::get('/edit-company', function () {
+        return view('users.employer.edit_company');
+    });
+
+    Route::get('/post-job', function () {
+        return view('users.employer.post_job');
+    });
+
+    Route::get('/applied-candidates', function () {
+        return view('users.employer.applied_candidates');
+    });
 });
