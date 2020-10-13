@@ -7,7 +7,7 @@
         <div class="jobs_banner_content width flex">
             <div class="jobs_banner_left flex">
                 <div class="jobs_logo">
-                    <img src="{{asset('/admin/assets/images/company-logo.png')}}" alt="">
+                    <img src="{{ asset('public/storage/'.$job->logo) }}" style="width: 100px; background:#fff" alt="">
                 </div>
                 <div class="jobs_logo_content">
                     <h2>{{ $job->title }}</h2>
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="jobs_banner_right">
-                <p>100Tk</p>
+                <p>{{ $job->salary }}</p>
             </div>
         </div>
     </div>
@@ -35,9 +35,27 @@
             <div class="single_job_del">
                 {{ $job->description }}
             </div>
-            <div class="job_apply">
-                <p><a href="applied_jobs">apply</a></p>
-            </div>
+            @auth
+            @if (Auth::user()->role == 'seeker')
+           
+            @if ($applied)
+            <div class="alert alert-info">Already Applied</div>
+            @else
+            <form action="{{ url('seeker/job/'.$job->id.'/apply') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="exp_salery">Expected Salery</label>
+                    <input type="text" name="exp_salery" class="form-control">
+                </div>
+                <div class="job_apply">
+                    <button class="btn btn-dark">Apply</button>
+                </div>
+            </form>
+            @endif
+            @endauth
+            @else
+            <div class="alert alert-info">Login to apply</div>
+            @endauth
         </div>
         <div class="job_details_right">
             <h5>Company Social</h5>

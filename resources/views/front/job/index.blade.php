@@ -6,21 +6,21 @@
     <div class="container">
         <div class="jobs_banner_content">
             <div class="banner_search">
-                <form>
+                <form action="{{ url('search') }}" method="GET">
                     <div class="form-row">
                         <div class="form-group">
-                            <input type="email" placeholder="location">
+                            <input name="q" type="text" placeholder="location" required>
                         </div>
                         <div class="form-group">
-                            <select>
+                            <select name="cat">
                                 @foreach ($categories as $category)
-                                <option value="">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="button_search">
+                        <button type="submit" class="button_search">
                             <i class="fas fa-search"></i>
-                        </div>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -36,7 +36,7 @@
             <a href="{{ url('job/'.$job->id) }}">
                 <div class="single_job">
                     <div class="job_company_logo">
-                        <img src="{{ asset('storage/'.$job->logo) }}" alt="">
+                        <img src="{{ asset('public/storage/'.$job->logo) }}" alt="">
                         <div class="job_title">
                             <h5>{{ $job->title }}</h5>
                             <p>{{$job->category->name}}</p>

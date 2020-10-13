@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Apply;
 use App\Job;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class JobController extends Controller
@@ -50,8 +52,12 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
+        $applied = [];
+        if (Auth::check()) {
+           $applied = Apply::where(['job_id' => $job->id, 'user_id' => Auth::id()])->first();
+        }
         $jobs = Category::find($job->category->id)->jobs->skip($job->id);
-        return view('front.job.show', compact('job', 'jobs'));
+        return view('front.job.show', compact('job', 'jobs','applied'));
     }
 
     /**
@@ -86,5 +92,13 @@ class JobController extends Controller
     public function destroy(Job $job)
     {
         //
+    }
+
+
+    public function search(Request $request)
+    {
+        $jobs = Job::where('category_id', $request->cat)->where('title','LIKE',"%{$request->q}%")->orWhere('description','LIKE',"%{$request->q}%")->get();
+        $categories = Category::all();
+        return view('front.job.index', compact('categories','jobs'));
     }
 }

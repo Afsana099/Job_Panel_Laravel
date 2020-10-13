@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+
 @section('content')
 <!-- Start Header Banner Area -->
 <div class="jobs_banner_area">
@@ -13,16 +14,16 @@
 <div class="job_details_area">
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="view_left">
-                    @include('admin.partials.sidebar')
+                    @include('employer.partials.sidebar')
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <div class="edit_resume_area">
                     <div class="container">
                         <div class="form">
-                            <form action="{{ url('admin/job') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('employer/job') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label>Job Title *</label>
