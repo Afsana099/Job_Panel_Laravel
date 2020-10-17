@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="profile_des">
-                        <div class="single_profile_box flex2">
+                        <div class="single_profile_box_img flex2">
                             <div class="single_profile_box_left">
                                 <img src="{{ url('public/storage/'.$user->picture) }}">
                             </div>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="single_profile_box">
                             <h6>OBJECTIVE</h6>
-                            <p>{{ $user->objective }}</p>
+                            <p class="ml-5">{{ $user->objective }}</p>
                         </div>
                         <div class="single_profile_box">
                             <h6>WORK EXPERIENCE</h6>

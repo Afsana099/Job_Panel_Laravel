@@ -481,7 +481,7 @@
                             <input type="file" name="picture" id="image"/>
                         </div>
                         <div class="job_apply">
-                        <button type="submit" class="btn btn-primary" style="margin-bottom: 15px;">Update</button>
+                        <button type="submit" class="btn btn-warning" style="margin-bottom: 40px;">Update</button>
                         </div>
                         </form>
                         </div>

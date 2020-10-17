@@ -19,10 +19,13 @@
                         Quick Links
                     </h5>
                     <ul>
-                        <li><a href="/home">home</a></li>
-                        <li><a href="/jobs">jobs</a></li>
-                        <li><a href="/create_resume">job seeker</a></li>
-                    </ul>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    @guest
+                    <li><a href="{{ url('seeker/resume/create') }}">Job<span>Seeker</span></a></li>
+                    <li><a href="{{ url('employer/company/create') }}">Employer</a></li>
+
+                    @endguest
+                </ul>
                 </div>
             </div>
             <div class="col-md-4">

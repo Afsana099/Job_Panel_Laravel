@@ -42,6 +42,14 @@
 	line-height: 1.4;
 	background-color: aliceblue;
 	}
+	h3{
+	margin-bottom: 50px;
+    color: #03578e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    text-align: center;
+	}
 	/* Banner Area Css  */
 	.banner_content {
 	position: absolute;
@@ -435,6 +443,7 @@
 			<div class="container-fluid">
 				<div class="row no-gutters">
 					<div class="col-md-12">
+						<h3>Carriculum vitae</h3>
 						<div class="view_right">
 							<div class="profile_top flex">
 								<div class="profile_top_left">
@@ -499,7 +508,7 @@
 									@endforeach
 								</div>
 								<div class="single_profile_box">
-									<h6>Skills</h6>
+									<h6>SKILL</h6>
 									@php($i=0)
 									@foreach($achivements as $achivement)
 									<div class="single_child_box">

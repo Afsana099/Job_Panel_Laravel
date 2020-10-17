@@ -53,7 +53,7 @@
                                     </div>
                                 </div>
                                 <div class="job_apply">
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-warning">Update</button>
                                 </div>
                             </form>
                         </div>
