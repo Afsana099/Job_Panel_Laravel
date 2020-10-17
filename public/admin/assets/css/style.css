@@ -1,9 +1,9 @@
 /* Base CSS */
 /* a:focus { outline: 0 solid } */
-a{display:inline-block;}
+a{display:inline-block;font-size: 18px;letter-spacing: 1px;}
 a:hover{text-decoration:none;}
 img {
-	width: 100%;
+    width: 100%;
     height: auto;
 }
 h1,
@@ -12,66 +12,70 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0px;
+    margin:40px 0px;
     font-weight: 700;
+    letter-spacing: 1px;
+    color: #1d8a13;
 }
 ul{
-	margin:0;
-	padding:0;
-	list-style:none
+    margin:0;
+    padding:0;
+    list-style:none
 }
 p{
-	font-size:14px;
-	margin-bottom:0px;
+    font-size:14px;
+    margin-bottom:0px;
 }
 body {
-	font-family: 'Noto Sans', sans-serif;
-	font-size: 14px;
-	line-height: 1.4;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
 }
 .margin{margin: 50px 0px 130px 0px;}
 .margin_180{
-	margin: 108px 0px;
+    margin: 108px 0px;
 }
 .no-padd{padding:0px;}
 /* a{
-	text-decoration:none;
-	color:#fff
+    text-decoration:none;
+    color:#fff
 } */
 
 /* Menu Area Css */
 .menu_area {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 999;
-	background: #fafafa;
-	border-bottom: 1px solid #f0efef;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: #fafafa;
+    border-bottom: 1px solid #f0efef;
 }
 .header_menu {
     display: flex;
     flex-flow: row;
-	width: 100%;
-	padding: 17px 0px;
+    width: 100%;
+    padding: 17px 0px;
 }
 .menu_area.sticky.scroll-header {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	background: linear-gradient(to right, #a1ffce, #faffd1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(to right, #18a55b, #faffd1);
 }
-.menu_logo {
-	flex: 0 0 20%;
-	width: 25%;
+.main_logo {
+  margin: 0px;
+  flex: 0 0 20%;
+    width: 25%;
 }
-.menu_logo h2 a {
-	font-size: 35px;
-	color: #a6369a;
-	letter-spacing: 3px;
-	text-transform: uppercase;
+.main_logo a {
+  display: block;
+  font-size: 32px;
+  color: #8c0c7e;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
-.menu_logo a span {
-	padding-left: 15px;
+.main_logo a span{
+  padding-left: 15px;
 }
 .menues {
     flex: 0 0  60%;
@@ -89,11 +93,11 @@ body {
     text-align: center;
 }
 .menues ul li a {
-	width: 100px;
-	margin-top: 10px;
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #131313;
+    width: 100px;
+    margin-top: 10px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #131313;
     letter-spacing: 1px;
     position: relative;
 }
@@ -105,11 +109,14 @@ body {
     text-align: right;
 }
 .menu_login_area ul li a {
-	padding: 8px 10px;
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #0f0f0f;
-	letter-spacing: 1px;
+    padding: 8px 10px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #0f0f0f;
+    letter-spacing: 1px;
+}
+li a span {
+  margin-left: 5px;
 }
 .menues ul li a:hover::before {
     content:" ";
@@ -135,13 +142,13 @@ body {
     transform: translate(-50%, -50%);
 }
 .banner_content h2 {
-	color: #777373;
-	margin-bottom: 15px;
+    color: #777373;
+    margin-bottom: 15px;
 }
 .banner_content p {
-	color: #959090;
-	text-align: center;
-	font-size: 16px;
+    color: #959090;
+    text-align: center;
+    font-size: 16px;
 }
 .banner_area {
     background-image: url(../../assets/images/job.jpg);
@@ -159,18 +166,17 @@ body {
     margin-right: 9px;
 }
 .form-group input, .form-group select {
-	background-color: transparent;
-	width: 100%;
-	height: 43px;
-	border: 1px solid #cac6c6;
-	padding: 0px 13px;
-	border-radius: 20px;
+    background-color: transparent;
+    width: 100%;
+    height: 43px;
+    border: 1px solid #a2a0a0;
+    padding: 0px 13px;
+    border-radius: 20px;
 }
 .form-group input::placeholder ,.form-group select {
     color: #000 !important;
-    font-size: 17px;
     text-transform: capitalize;
-	letter-spacing: 1px;
+    letter-spacing: 1px;
 }
 .home_email.form-group input::placeholder {
     color: #000 !important;
@@ -200,13 +206,13 @@ body {
     font-weight: 700;
 }
 .single_categories {
-	text-align: center;
-	padding: 40px 102px;
-	background-color: #fff;
-	transition: .4s;
-	cursor: pointer;
-	margin: auto 50px 50px auto;
-	box-shadow: 0 5px 25px 0 rgba(41,128,185,0.15);
+    text-align: center;
+    padding: 40px 102px;
+    background-color: #fff;
+    transition: .4s;
+    cursor: pointer;
+    margin: auto 50px 50px auto;
+    box-shadow: 0 5px 25px 0 rgba(41,128,185,0.15);
 }
 .single_categories:hover {
     background-color: #F9FCFF;
@@ -364,46 +370,47 @@ p.full_time {
 }
 /* Start Footer Area  Css*/
 .footer_area {
-	padding: 55px 0;
-	background: #605f5f;
+    padding: 55px 0;
+    background: #262626;
 }
 .footer_logo a {
-	text-transform: capitalize;
-	letter-spacing: 2px;
-	color: #7af269;
-	display: block;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: #7af269;
+    display: block;
+    font-size: 28px;
 }
 .single_footer1 p,.single_footer3 p {
-	color: white;
-	text-transform: capitalize;
-	margin-top: 30px;
-	word-spacing: 2px;
-	line-height: 23px;
+    color: white;
+    text-transform: capitalize;
+    margin-top: 30px;
+    word-spacing: 2px;
+    line-height: 23px;
     text-align: justify;
     letter-spacing: 1px;
     
 }
 .single_footer2 {
-	padding: 0px 60px;
+    padding: 0px 60px;
 }
 .single_footer2 h5,.single_footer3 h5{
-	color: #7af269;
-	font-size: 28px;
-	margin-bottom: 20px;
+    color: #7af269;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 .single_footer2 a {
-	text-transform: capitalize;
-	color: #fff;
-	margin-top: 10px;
-	line-height: 30px;
-	font-size: 15px;
-	letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-top: 10px;
+    line-height: 30px;
+    font-size: 15px;
+    letter-spacing: 1px;
 }
 .fa.fa-envelope {
-	margin-left: 10px;
-	font-size: 23px;
-	margin-top: 15px;
-	color: white;
+    margin-left: 10px;
+    font-size: 23px;
+    margin-top: 15px;
+    color: white;
 }
 /*================================ JOBS =============================*/
 .jobs_banner_area {
@@ -411,9 +418,10 @@ p.full_time {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 287px;
-    position: relative;
+    height: 70vh;
+    margin-top: 70px;
     z-index: 9;
+    position: relative;
 }
 .jobs_banner_area:before {
     position: absolute;
@@ -421,7 +429,26 @@ p.full_time {
     width: 100%;
     height: 100%;
     background-color: #000;
-    opacity: .8;
+    opacity: .5;
+    z-index: -1;
+}
+.jobs_banner_area_emp {
+    background-image: url(../../assets/images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+     z-index: 9;
+    position: relative;
+    margin-top: 70px;
+}
+.jobs_banner_area_emp:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5;
     z-index: -1;
 }
 .jobs_banner_content {
@@ -433,14 +460,14 @@ p.full_time {
     
 }
 .button_search {
-    font-size: 18px;
-    line-height: 44px;
+    /*! font-size: 18px; */
+    line-height: 42px;
     background-color: #595e66;;
     color: #fff;
-    width: 54px;
+    width: 50px;
     height: 42px;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
 }
 .job_apply p a{
@@ -545,12 +572,12 @@ ul.company_social li a:hover {
 /*========================== POST JOB ============================*/
 .job_post_form {
     padding: 30px;
-    box-shadow: 0 0 14px rgba(191,191,191,.24);
+    box-shadow: 0 0 20px rgba(147, 139, 139, 0.24);
     margin: 50px 0px;
 }
-.job_post_form h5 {
-    margin-bottom: 16px;
-    color: #191c1e;
+.job_post_form h3 {
+    margin-bottom: 50px;
+    color: #03578e;
     text-transform: capitalize;
 }
 /*========================== CREATE RESUME ============================*/
@@ -682,31 +709,32 @@ span.ex-title {
     color: #333;
 }
 ul.view_left_menu li a:hover {
+    text-decoration: none;
     border-radius: 2px;
     background-color: #242d3e;
-    color: #fff;
+    color: #fff;   
 }
 ul.view_left_menu li a {
-    font-size: 15px;
-    padding: 8px 9px;
+    font-size: 14px;
+    padding: 10px 15px;
     text-transform: capitalize;
     color: #888;
     display: block;
     transition: .5s;
 }
 #scrollUp {
-	position: absolute;
-	right: 22px;
-	bottom: 24px;
-	color: #fff;
-	width: 50px;
-	height: 50px;
-	background-color: #FF6346;
-	font-size: 30px;
-	text-align: center;
-	line-height: 50px;
-	z-index: 99999999999;
-	position: absolute;
+    position: absolute;
+    right: 22px;
+    bottom: 24px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    background-color: #FF6346;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    z-index: 99999999999;
+    position: absolute;
 }
 .regisFrm {
     margin: 130px auto;
@@ -727,10 +755,10 @@ ul.view_left_menu li a {
 
 label {
     color: #0d0c0c;
-    font-size: 18px;
-    margin-bottom: 25px;
-    margin-right: 25px;
-    margin-left: 10px;
+    font-size: 16px;
+    margin: 20px 0px;
+    letter-spacing: 1px;
+    margin-left: 6px;
 }
 .send-button input {
     margin: 15px 210px !important;

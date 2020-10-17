@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.admin')
 
-@section('main-content')
+@section('content')
 <!-- Start Header Banner Area -->
 <div class="jobs_banner_area">
     <div class="container">
@@ -13,36 +13,34 @@
 <div class="job_details_area">
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="view_left">
-                    @include('users.employer.partials.sidebar')
+                    @include('employer.partials.sidebar')
                 </div>
             </div>
             <div class="col-md-9">
                 <div class="view_right">
                     <div class="profile_des">
                         <div class="single_profile_box">
-                            <h6>Applied Candidates (1)</h6>
+                            <h6> My Applied Jobs </h6>
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Job Title</th>
-                                        <th scope="col">Candidate Name</th>
+                                        <th scope="col">Company Name</th>
                                         <th scope="col">Expected Salary</th>
-                                        <th scope="col">Applyed Date</th>
-                                        <th scope="col">View Profile</th>
+                                        <th scope="col">Applied Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>metro</td>
-                                        <td>cse</td>
-                                        <td>4.76</td>
-                                        <td>2020</td>
-                                        <td><img src="#"></td>
-                                    </tr>
+                        
+                                        <td>job->id</td>
+                                        <td>job->title</td>
+                                        <td>job->company }}</td>
+                                        <td>job->applied->exp_salery }}</td>
+                                        <td>job->created_at->format('d-m-Y') </td>
+                           
                                 </tbody>
                             </table>
                         </div>

@@ -14,12 +14,12 @@
 <div class="job_details_area">
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="view_left">
                     @include('employer.partials.sidebar')
                 </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <div class="edit_resume_area">
                     <div class="container">
                         <div class="form">
@@ -42,15 +42,22 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Job Tags (optional)</label>
-                                    <input type="text" name="tags">
+                                    <label>Job status </label>
+                                    <select name="tags">
+                                        <option value="Part Time">
+                                            Part Time
+                                        </option>
+                                        <option value="Full Time">
+                                            Full Time
+                                        </option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
                                     <textarea name="description" class="form-control" rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Closing Date (optional)</label>
+                                    <label>End Date (optional)</label>
                                     <input type="date" name="deadline">
                                 </div>
                                 <h5>Company Details
@@ -60,11 +67,11 @@
                                     <input type="text" name="company">
                                 </div>
                                 <div class="form-group">
-                                    <label>Website (optional)</label>
+                                    <label>Company Website (optional)</label>
                                     <input type="text" name="website">
                                 </div>
                                 <div class="form-group">
-                                    <label>Salery</label>
+                                    <label>Salary</label>
                                     <input type="text" name="salary">
                                 </div>
                                 <div class="form-group">

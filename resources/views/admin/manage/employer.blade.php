@@ -21,7 +21,7 @@
                 <div class="view_right">
                     <div class="profile_des">
                         <div class="single_profile_box">
-                            <h6>Manage Employers</h6>
+                            <h6>Manage Employer</h6>
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
@@ -29,7 +29,6 @@
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Status</th>
-                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,11 +50,7 @@
                                                 @endif
                                             </form>
                                         </th>
-                                        <td>
-                                            <button onclick="setDelete({{ $user->id }})" data-target="#delete_modal" type="button" class="btn btn-danger"
-                                                data-toggle="modal"><i class="fas fa-trash">Delete</i>
-                                            </button>
-                                        </td>
+                                
                                     </tr>
                                     @endforeach
                                 </tbody>

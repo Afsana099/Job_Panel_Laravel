@@ -29,7 +29,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Name</th>
-                                    <th>Created On</th>
+                                    <th>Created at</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

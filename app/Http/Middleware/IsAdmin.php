@@ -20,6 +20,6 @@ class IsAdmin
            
             return $next($request);
         }
-        return redirect('/')->with('info','You dont have permission to access this page');
+        return redirect('/')->with('info','Now You have permission to access this page');
     }
 }

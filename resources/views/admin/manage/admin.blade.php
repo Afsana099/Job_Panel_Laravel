@@ -51,11 +51,7 @@
                                                 @endif
                                             </form>
                                         </th>
-                                        <td>
-                                            <button onclick="setDelete({{ $user->id }})" data-target="#delete_modal" type="button" class="btn btn-danger"
-                                                data-toggle="modal"><i class="fas fa-trash">Delete</i>
-                                            </button>
-                                        </td>
+                                        
                                     </tr>
                                     @endforeach
                                 </tbody>

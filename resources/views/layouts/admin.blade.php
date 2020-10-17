@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Admin Dashboard</title>
+    <title>Job Panel</title>
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,400,500,700,800,900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -31,6 +31,9 @@
 
     @include('partials.header')
     @yield('content')
+<!-----Page DataTables Custom(Search) Scripts----->
+
+
 
 
     <!--Dashboard Js Link-->
@@ -50,6 +53,16 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('public/dashboard/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('public/dashboard/js/demo/chart-pie-demo.js') }}"></script>
+    <!-- Page level plugins -->
+<script src="{{asset('public/dashboard/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('public/dashboard/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+
+<script>
+    $(document).ready(function () {
+    $('#dataTable').DataTable(); // ID From dataTable
+    $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+    });
+</script>
     
     @yield('scripts')
     @include('partials.toastr')

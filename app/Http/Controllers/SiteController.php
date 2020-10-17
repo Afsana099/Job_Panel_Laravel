@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Job;
 use App\User;
 use App\Category;
+use App\Degree;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
@@ -56,8 +57,9 @@ class SiteController extends Controller
 
 
     public function seeker()
-    {
-        return view('seeker.resume.create');
+    {   
+        $degrees=Degree::all();
+        return view('seeker.resume.create',compact('degrees'));
     }
 
     public function seekReg(Request $request)
@@ -66,6 +68,7 @@ class SiteController extends Controller
        $request->validate([
         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         'password' => ['required', 'string', 'min:8', 'confirmed'],
+        
     ]);
 
     $data = $request->all();
@@ -74,6 +77,7 @@ class SiteController extends Controller
     }
     $data['password'] = Hash::make($request->password);
     $data['role'] = 'seeker';
+    
 
 
     event(new Registered(
@@ -81,6 +85,6 @@ class SiteController extends Controller
     ));
 
         Auth::login($user);
-        return redirect('seeker')->with('success', 'Registration succefull. Now verify your email');
+        return redirect('seeker')->with('success', 'Registration successfull. Now verify your email');
     }
 }

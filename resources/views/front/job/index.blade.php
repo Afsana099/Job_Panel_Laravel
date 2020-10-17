@@ -39,7 +39,7 @@
                         <img src="{{ asset('public/storage/'.$job->logo) }}" alt="">
                         <div class="job_title">
                             <h5>{{ $job->title }}</h5>
-                            <p>{{$job->category->name}}</p>
+                            <p>{{$job->name}}</p>
                         </div>
                     </div>
                     <div class="job_location">
@@ -47,7 +47,7 @@
                         <p>{{$job->location}}</p>
                     </div>
                     <div class="job_type">
-                        <p class="part_time">part time</p>
+                        <p class="part_time">{{$job->tags}}</p>
                     </div>
                 </div>
             </a>

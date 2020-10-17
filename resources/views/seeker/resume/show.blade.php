@@ -13,7 +13,7 @@
 <div class="job_details_area">
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="view_left">
                     @include('seeker.partials.sidebar')
                 </div>
@@ -23,132 +23,112 @@
                 <div class="view_right">
                     <div class="profile_top flex">
                         <div class="profile_top_left">
-                            <h6>My Profile</h6>
+                            <h4>My Profile</h4>
                         </div>
                         <div class="profile_top_right">
-                            <p><i class="fas fa-download"></i> download profile</p>
+                            <p><a href="{{ url('seeker/profile/download') }}"><i class="fas fa-download"></i> Download CV</a></p>
                         </div>
                     </div>
                     <div class="profile_des">
                         <div class="single_profile_box flex2">
                             <div class="single_profile_box_left">
-                                <img src="../assets/images/pro.jpeg" alt="">
+                                <img src="{{ url('public/storage/'.$user->picture) }}">
                             </div>
                             <div class="single_profile_box_right">
-                                <h4>afsana</h4>
-                                <p><i class="fas fa-home"></i>abc</p>
-                                <p><i class="far fa-envelope"></i>abc@gmail.com</p>
-                                <p><i class="fas fa-phone"></i>017000000000</p>
+                                <h4>{{ $user->name }}</h4>
+                                <p><i class="fas fa-home"></i>{{ $user->address }}</p>
+                                <p><i class="far fa-envelope"></i>{{ $user->email }}</p>
+                                <p><i class="fas fa-phone"></i>{{ $user->mobile }}</p>
                             </div>
                         </div>
                         <div class="single_profile_box">
                             <h6>OBJECTIVE</h6>
-                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi umsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.</p>
+                            <p>{{ $user->objective }}</p>
                         </div>
                         <div class="single_profile_box">
                             <h6>WORK EXPERIENCE</h6>
+                            @foreach($experiences as $experience)
                             <div class="single_child_box">
-                                <span class="ex-title">UI/UX Designer</span>
-                                <span>BANNANA INC.</span>
-                                <span>Fab 2017-Present(5year)</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero vero, dolores, officia quibusdam architecto sapiente eos voluptas odit ab veniam porro quae possimus itaque, quas! Tempora sequi nobis, atque incidunt!</p>
+                                <span class="ex-title">{{$experience->desgination}}</span>
+                                <span>{{$experience->company}}</span>
+                                <span>
+                                {!! htmlspecialchars_decode(date('j<\s\up>S</\s\up> F Y', strtotime($experience->start_date))) !!}-{!! htmlspecialchars_decode(date('j<\s\up>S</\s\up> F Y', strtotime($experience->end_date))) !!}</span>
+                                <p>{{$experience->response}}</p>
                             </div>
-                            <div class="single_child_box">
-                                <span class="ex-title">UI/UX Designer</span>
-                                <span>BANNANA INC.</span>
-                                <span>Fab 2017-Present(5year)</span>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero vero, dolores, officia quibusdam architecto sapiente eos voluptas odit ab veniam porro quae possimus itaque, quas! Tempora sequi nobis, atque incidunt!</p>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="single_profile_box">
-                            <h6>EDUCATION</h6>
+                            <h6>EDUCATIONAL QUALIFICATION</h6>
+                            @foreach ($educations as $education)
                             <div class="single_child_box">
-                                <span class="ex-title">Massachusetts Institute Of Technology</span>
-                                <span>Bachelor of Computer Science</span>
-                                <span>2010-2014</span>
-                                <span>4.88 (cse)</span>
+                                <span class="ex-title">Institution:
+                                    {{$education->institution}}</span>
+                                <span>Degree Name:
+                                    {{ $education->degree_name }}</span>
+                                <span>Passing Year:
+                                    {{ $education->pass_year }}</span>
+                                <span>Result:
+                                    {{ $education->result }} 
+                                    ({{ $education->major_sub }})</span>
                             </div>
-                            <div class="single_child_box">
-                                <span class="ex-title">Massachusetts Institute Of Technology</span>
-                                <span>Bachelor of Computer Science</span>
-                                <span>2010-2014</span>
-                                <span>4.88 (cse)</span>
-                            </div>
-                            <div class="single_child_box">
-                                <span class="ex-title">Massachusetts Institute Of Technology</span>
-                                <span>Bachelor of Computer Science</span>
-                                <span>2010-2014</span>
-                                <span>4.88 (cse)</span>
-                            </div>
+                             @endforeach
+
                         </div>
                         <div class="single_profile_box">
                             <h6>TRAINING</h6>
+                            @php($i=0)
+                            @foreach($trainings as $training)
                             <div class="single_child_box">
-                                <span class="ex-title">Html</span>
-                                <p>Pictures, abstract symbols, materials, and colors are among the ingredients with which a</p>
-                                <span>Institution - ds ( aS )</span>
-                                <span>Duration - 6</span>
+                                <span class="ex-title">{{$training ->title}}</span>
+                                <p>{{$training ->details}}</p>
+                                <span>Location - {{$training ->location}}</span>
+                                <span>Institution - {{$training ->institution}}</span>
+                                <span>Duration - {{$training ->duration}}</span>
                             </div>
-                            <div class="single_child_box">
-                                <span class="ex-title">Html</span>
-                                <p>Pictures, abstract symbols, materials, and colors are among the ingredients with which a</p>
-                                <span>Institution - ds ( aS )</span>
-                                <span>Duration - 6</span>
-                            </div>
-                            <div class="single_child_box">
-                                <span class="ex-title">Html</span>
-                                <p>Pictures, abstract symbols, materials, and colors are among the ingredients with which a</p>
-                                <span>Institution - ds ( aS )</span>
-                                <span>Duration - 6</span>
-                            </div>
+                            @endforeach
+
                         </div>
                         <div class="single_profile_box">
-                            <h6>ACHIEVMENT</h6>
+                            <h6>SKILL</h6>
+                            @php($i=0)
+                            @foreach($achivements as $achivement)
                             <div class="single_child_box">
-                                <p>Pictures, abstract symbols, materials, and colors are among the ingredients with which a</p>
-                                <span>Duration - 6</span>
+                                <p>{{$achivement->details}}</p>
                             </div>
-                            <div class="single_child_box">
-                                <p>Pictures, abstract symbols, materials, and colors are among the ingredients with which a</p>
-                                <span>Duration - 6</span>
-                            </div>
-                            <div class="single_child_box">
-                                <p>Pictures, abstract symbols, materials, and colors are among the ingredients with which a</p>
-                                <span>Duration - 6</span>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="single_profile_box">
-                            <h6>PERSONAL</h6>
+                            <h6>PERSONAL INFORMATION</h6>
                             <div class="single_child_box">
                                 <table class="table">
                                     <tbody>
                                         <tr>
                                             <th scope="col">Fathers Name</th>
-                                            <td>kar</td>
+                                            <td>{{ $user->father}}</td>
                                         </tr>
                                         <tr>
                                             <th scope="col">Mothers Name</th>
-                                            <td>kar</td>
+                                            <td>{{ $user->mother}}</td>
                                         </tr>
                                         <tr>
                                             <th scope="col">Date of Birth</th>
-                                            <td>1997-11-2</td>
+                                            <td>{{ $user->date_of_birth}}</td>
                                         </tr>
                                         <tr>
                                             <th scope="col">Gender</th>
-                                            <td>Female</td>
+                                            <td>{{ $user->gender}}</td>
                                         </tr>
                                         <tr>
                                             <th scope="col">Marital Status</th>
-                                            <td>Unmarried</td>
+                                            <td>{{ $user->marital_status}}</td>
                                         </tr>
                                         <tr>
                                             <th scope="col">Religion</th>
-                                            <td>Hinduism</td>
+                                            <td>{{ $user->religion}}</td>
                                         </tr>
                                         <tr>
                                             <th scope="col">NID No</th>
-                                            <td></td>
+                                            <td>{{ $user->nid}}</td>
                                         </tr>
                                     </tbody>
                                 </table>

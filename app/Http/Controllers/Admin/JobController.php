@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Job;
+use App\Apply;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class JobController extends Controller
 {
@@ -18,6 +20,17 @@ class JobController extends Controller
     public function index()
     {
         //
+    }
+    public function applied()
+    {
+        $jobs = DB::table('jobs')
+            ->select('jobs.id', 'applies.user_id as applier_id', 'exp_salery', 'users.name as name', 'jobs.title', 'jobs.company', 'applies.created_at')
+            ->join('applies', 'job_id', 'jobs.id')
+            ->join('users', 'users.id', 'applies.user_id')
+            ->where('jobs.user_id', Auth::id())
+            ->get();
+        // return $jobs;
+        return view('admin.job.index', compact('jobs'));
     }
 
     /**

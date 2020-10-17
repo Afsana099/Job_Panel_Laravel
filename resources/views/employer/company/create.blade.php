@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Start Header Banner Area -->
-<div class="jobs_banner_area">
+<div class="jobs_banner_area_emp">
     <div class="container">
         <div class="jobs_banner_content width flex">
         </div>
@@ -27,10 +27,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Company Email *</label>
-                                        <input type="text" name="company_email" required>
+                                        <input type="email" name="company_email" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Company Mobile No *</label>
+                                        <label>Company Phone No *</label>
                                         <input type="text" name="company_mobile" required>
                                     </div>
                                     <div class="form-group">
@@ -46,7 +46,7 @@
                                         <input type="text" name="company_facebook" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Username *</label>
+                                        <label>Email *</label>
                                         <input type="text" name="email" required>
                                     </div>
                                     <div class="form-group">
@@ -70,4 +70,5 @@
         </div>
     </div>
 </div>
+@include('partials.footer')
 @endsection

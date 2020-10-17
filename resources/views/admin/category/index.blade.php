@@ -27,10 +27,10 @@
                         <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                             <thead class="thead-light">
                                 <tr>
-                                    <th>No</th>
+                                    <th>Category ID</th>
                                     <th>Name</th>
                                     <th>Logo</th>
-                                    <th>Created On</th>
+                                    <th>Created at</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

@@ -1,4 +1,6 @@
-<h5>My Profile</h5>
+<h5 style="color:white;
+    background-color: #090909;
+    padding: 10px;">My Profile</h5>
 <ul class="view_left_menu">
     <li><a href="{{ url('seeker') }}">view profile</a></li>
     <li><a href="{{ url('seeker/profile/edit') }}">edit profile</a></li>

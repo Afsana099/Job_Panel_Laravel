@@ -11,7 +11,8 @@
                 <form action="{{ url('search') }}" method="GET">
                     <div class="form-row">
                         <div class="form-group">
-                            <input name="q" type="text" placeholder="location" required>
+                            <input name="q" type="text" placeholder="location"style
+                            required>
                         </div>
                         <div class="form-group">
                             <select name="cat">
@@ -99,10 +100,10 @@
             <a href="{{ url('job/'.$job->id) }}">
                 <div class="single_job">
                     <div class="job_company_logo">
-                        <img src="{{ asset('storage/'.$job->logo) }}" alt="">
+                        <img src="{{ url('public/storage/'.$job->logo) }}" alt="">
                         <div class="job_title">
                             <h5>{{ $job->title }}</h5>
-                            <p>{{$job->category->name}}</p>
+                            <p>{{$job->name}}</p>
                         </div>
                     </div>
                     <div class="job_location">
@@ -110,7 +111,7 @@
                         <p>{{$job->location}}</p>
                     </div>
                     <div class="job_type">
-                        <p class="part_time">part time</p>
+                        <p class="part_time">{{$job->tags}}</p>
                     </div>
                 </div>
             </a>

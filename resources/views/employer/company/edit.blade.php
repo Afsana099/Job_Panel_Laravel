@@ -14,12 +14,12 @@
 <div class="job_details_area">
     <div class="container-fluid">
         <div class="row no-gutters">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="view_left">
                     @include('employer.partials.sidebar')
                 </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <div class="edit_resume_area">
                     <div class="container">
                         <div class="tab-content" id="myTabContent">
@@ -36,7 +36,7 @@
                                         <input type="text" name="company_email" value="{{ $user->company_email }}">
                                     </div>
                                     <div class="form-group">
-                                        <label>Company Mobile No *</label>
+                                        <label>Company Phone No *</label>
                                         <input type="text" name="company_mobile" value="{{ $user->company_mobile }}">
                                     </div>
                                     <div class="form-group">
@@ -44,7 +44,7 @@
                                         <input type="text" name="company_address" value="{{ $user->company_address }}">
                                     </div>
                                     <div class="form-group">
-                                        <label>twitter ID </label>
+                                        <label>Twitter ID </label>
                                         <input type="text" name="company_twitter" value="{{ $user->company_twitter }}">
                                     </div>
                                     <div class="form-group">

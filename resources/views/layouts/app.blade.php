@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Job Panel</title>
 
     <!-- Scripts -->
     <script src="{{ asset('public/js/app.js') }}" defer></script>
@@ -18,70 +18,35 @@
 
     <!-- Styles -->
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
-        <!-- Bootstrap Css -->
-        <link rel="stylesheet" href="{{ asset('public/admin/assets/css/bootstrap.min.css') }}" />
+        <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,400,500,700,800,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('public/admin/assets/css/all.min.css') }}" />
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{ asset('public/admin/assets/css/owl.carousel.min.css') }}" />
+    <!-- Site favicon -->
+    <link rel="shortcut icon" href="{{ asset('public/admin/assets/images/favicon.ico') }}">
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="{{ asset('public/admin/assets/css/bootstrap.min.css') }}" />
+    <!-- Main Css -->
+    <link rel="stylesheet" href="{{ asset('public/admin/assets/css/style.css') }}" />
 
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body id="page-top">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-
-        <!-- Bootstrap core JavaScript-->
-        <script src="{{ asset('public/dashboard/vendor/jquery/jquery.min.js') }}"></script>
-        <script src="{{ asset('public/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    @include('partials.header')
+    @yield('content')
+    @include('partials.footer')
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('public/admin/assets/js/jquery-1.12.4.min.js') }}" />
+        <!-- Bootstrap Css -->
+        <link rel="stylesheet" href="{{ asset('public/admin/assets/js/bootstrap.min.js') }}" />
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="{{ asset('public/admin/assets/js/owl.carousel.min.js') }}" />
+        <link rel="stylesheet" href="{{ asset('public/admin/assets/js/popper.min.js') }}" />
+        
+    
+    @yield('scripts')
+    @include('partials.toastr')
 </body>
 </html>

@@ -6,7 +6,8 @@
                 <div class="single_footer1">
                     <div class="footer_logo">
                         <h2>
-                            <a href="/home">JobPanel</a>
+                            <a href="/home">Job
+                                <span>Panel</span></a>
                         </h2>
                     </div>
                     <p>Sed consequat sapien faus quam bibendum convallis quis in nulla. Pellentesque volutpat odio eget diam cursus semper.</p>
@@ -20,7 +21,7 @@
                     <ul>
                         <li><a href="/home">home</a></li>
                         <li><a href="/jobs">jobs</a></li>
-                        <li><a href="/create_resume">employee</a></li>
+                        <li><a href="/create_resume">job seeker</a></li>
                     </ul>
                 </div>
             </div>
